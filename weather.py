@@ -12,7 +12,7 @@ class Weather ():
         self.get_weather_today()
         
     
-    def get_weather_today(self):
+    def get_weather_today(self) -> None:
         params = {
             "lat": self.lat,
             "exclude": "current,daily,minutely",
@@ -24,7 +24,7 @@ class Weather ():
         self.weather_data = res.json()
 
 
-    def will_rain(self):
+    def will_rain(self) -> bool:
         daily_hourly_data = self.weather_data["hourly"][0:12]
         for item in daily_hourly_data:
             if item["weather"][0]["id"] < 700:

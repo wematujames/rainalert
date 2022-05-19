@@ -12,7 +12,7 @@ class SMSManager():
     def __init__(self) -> None:
         pass
     
-    def send_msg(self):
+    def send_msg(self) -> None:
         client = Client(ACC_SID, AUTH_TOKEN)
         message = client.messages \
                     .create(
